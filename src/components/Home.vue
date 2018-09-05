@@ -96,14 +96,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'iview/dist/styles/iview.css'
 import iview from 'iview'
-import loanquery from '@/components/loanquery.vue'
-import repayquery from '@/components/repayquery.vue'
-import dynamic3 from '@/components/dynamicComponent3.vue'
-import businessLock from '@/components/businessLock.vue'
-import noticeinformation from '@/components/noticeinformation.vue'
-import proxyuserpaystatus from '@/components/proxyuserpaystatus.vue'
-import paydownquery from '@/components/paydownquery.vue'
-import accountqueryloanplan from '@/components/accountqueryloanplan.vue'
+import loanquery from '@/components/proxytools/loanquery.vue'
+
+import repayquery from '@/components/proxytools/repayquery.vue'
+import paystatusquery from '@/components/paytools/paystatusquery.vue'
+import businessLock from '@/components/proxytools/businessLock.vue'
+import noticeinformation from '@/components/common/noticeinformation.vue'
+import paydownquery from '@/components/proxytools/paydownquery.vue'
+import accountqueryloanplan from '@/components/accounttools/accountqueryloanplan.vue'
 
 
 import coreEnvs from '@/config/coreEnvs.js'
@@ -119,7 +119,7 @@ Vue.component(paystatusquery.name,paystatusquery)
 Vue.component("businessLock",businessLock)
 Vue.component("noticeinformation",noticeinformation)
 Vue.component("paydownquery",paydownquery)
-Vue.component("proxyuserpaystatus",proxyuserpaystatus)
+//Vue.component("proxyuserpaystatus",proxyuserpaystatus)
 Vue.component("accountqueryloanplan",accountqueryloanplan)
 
 Vue.use(boostrapvue)
