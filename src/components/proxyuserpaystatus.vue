@@ -1,12 +1,12 @@
 <template>
 <div>
-dynamic2
+coming soon
 </div>
 </template>
 <script>
 
 export default {
-  name: 'dynamic2',
+  name: 'proxyuserloanstatus',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
