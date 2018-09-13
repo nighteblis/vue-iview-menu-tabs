@@ -28,7 +28,8 @@ display:false,
 message:''
     }
 
-    }
+    },
+  server:"http://172.16.2.39:7280"
   }
   ,
   mutations: {
