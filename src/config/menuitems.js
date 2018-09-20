@@ -1,24 +1,27 @@
 
+
+// this js is to define the menu items
+
 export default{
 
 proxy:[
 
 {
 name:'loanquery',
-label:'借款查询'
+label:'测试工具1'
 },
 
 {
 name:'repayquery',
-label:'还款查询'
+label:'测试工具2'
 },
 {
 name:'paydownquery',
-label:'首付款查询'
+label:'测试工具3'
 },
 {
 name:'businessLock',
-label:'业务锁查询'
+label:'测试工具4'
 }
 
 
@@ -27,7 +30,7 @@ label:'业务锁查询'
 pay:[
 {
 name:'paystatusquery',
-label:'查询支付结果'
+label:'测试工具5'
 
 }
 
@@ -37,7 +40,7 @@ finance:[],
 account:[
 {
 name:"accountqueryloanplan",
-label:"查询借款还款计划"
+label:"测试工具6"
 
 }
 

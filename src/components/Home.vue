@@ -6,12 +6,12 @@
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-    <b-navbar-brand href="#">核心系统测试辅助平台</b-navbar-brand>
+    <b-navbar-brand href="#">测试平台示例</b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">
 
       <b-navbar-nav>
-        <b-nav-item href="http://qa.heika.com/jenkins/" target="_blank">Jenkins</b-nav-item>
+        <b-nav-item href="#" target="_blank">Jenkins</b-nav-item>
         <b-nav-item href="#">DashBoard</b-nav-item>
         <b-nav-item href="#" disabled>OTA</b-nav-item>
       </b-navbar-nav>
@@ -21,7 +21,7 @@
 
 
         <span style="color:white;margin-left:20px;margin-top:8px;font-size:1.2em;"></span> <Select v-model="selectedEnv" @on-change="selectenv"
-         placeholder="测试环境选择" style="width:150px">
+         placeholder="环境选择" style="width:150px">
             <Option v-for="env in coreEnvs.envs"  :value="env.envname"  :key="env.envname">{{ env.envname }}</Option>
         </Select>
 
@@ -42,7 +42,7 @@
           <Submenu name="1" >
               <template slot="title">
                   <Icon type="ios-people" />
-                  代理系统
+                  菜单1
               </template>
 
                     <MenuItem v-for="proxytool in menutiems.proxy" :key="proxytool.name"  :ref="'menuitem'+proxytool.name" :name="proxytool.name">{{proxytool.label}}</MenuItem>
@@ -52,21 +52,21 @@
           <Submenu name="2">
               <template slot="title">
                   <Icon type="logo-usd" />
-                  支付系统
+                  菜单2
               </template>
   <MenuItem v-for="paytool in menutiems.pay" :key="paytool.name"  :ref="'menuitem'+paytool.name" :name="paytool.name">{{paytool.label}}</MenuItem>
           </Submenu>
           <Submenu name="4">
               <template slot="title">
                   <Icon type="md-key" />
-                  财务系统
+                  菜单3
               </template>
 <MenuItem v-for="financetool in menutiems.finance" :key="financetool.name"  :ref="'menuitem'+financetool.name" :name="financetool.name">{{financetool.label}}</MenuItem>
           </Submenu>
           <Submenu name="5">
               <template slot="title">
                   <Icon type="md-book" />
-                  帐务系统
+                  菜单4
               </template>
 <MenuItem v-for="accounttool in menutiems.account" :key="accounttool.name"  :ref="'menuitem'+accounttool.name" :name="accounttool.name">{{accounttool.label}}</MenuItem>
           </Submenu>

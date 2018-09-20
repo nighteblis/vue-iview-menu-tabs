@@ -12,28 +12,27 @@ Vue.use(Vuex)
 /* eslint-disable no-new */
 
 var store = new Vuex.Store({
-  state:{
-    selectedEnv: 'env_150',
-    alert:{
-    success:{
-      display:false,
-      message:''
-    },
-    warning:{
-display:false,
-message:''
-    },
-    error:{
-display:false,
-message:''
-    }
+  state: {
+    selectedEnv: 'test_env',
+    alert: {
+      success: {
+        display: false,
+        message: ''
+      },
+      warning: {
+        display: false,
+        message: ''
+      },
+      error: {
+        display: false,
+        message: ''
+      }
 
     },
-  server:"http://172.16.2.39:7280"
-  }
-  ,
+    server: "http://localhost"
+  },
   mutations: {
-    noneed (state) {
+    noneed(state) {
       state.selectedEnv = ''
     }
   }
@@ -43,9 +42,10 @@ message:''
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   store,
   template: '<App/>',
-  beforeCreate: function() {
-}
+  beforeCreate: function () {}
 })

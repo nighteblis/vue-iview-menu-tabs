@@ -1,55 +1,23 @@
 
+// this file is define the envs, we can select the env 
+
+
 export default{
 
 envs:[
 
 {
-envname:'env_150',
-account_proxy:'',
-account_proxy_job:'',
-account:'',
-account_job:'',
-pay:'',
-pay_job:'',
-finance:'',
-finance_job:'',
-account_proxy_db:'',
-pay_db:'',
-account_db:'',
-finance_db:''
+envname:'test_env'
 
 },
 {
-envname:'env_151'
+envname:'test_env1'
 },
 
 {
-envname:'env_158'
-
-},
-
-{
-
-envname:'env_164'
-
-},
-
-{
-
-envname:'env_165'
-
-},
-{
-
-envname:'env_39'
-
-},
-{
-
-envname:'env_combined'
+envname:'test_env2'
 
 }
-
 ]
 
 }
