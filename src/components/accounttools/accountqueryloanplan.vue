@@ -1,20 +1,7 @@
 <template>
 <div>
 
-<Input v-model="accountloankey" placeholder="输入账务借款Key" style="width: 300px" />
-
-<Button type="primary" @click="handleSubmit(false)"> 查询借款还款计划 </Button>
-
-</br>
-<noticeinformation ref="noticeinformation"></noticeinformation>
-</br>
-
-<Table border :columns="columns2" :data="data2"></Table>
-
-
-<Divider />
-<Table border :columns="columns" :data="data"></Table>
-
+haha , testing here
 
 </div>
 </template>

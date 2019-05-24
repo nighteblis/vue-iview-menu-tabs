@@ -1,20 +1,7 @@
 <template>
 <div>
 
-<Input v-model="partnerloanno" placeholder="三方借款编号" style="width: 300px" />
-
-    <Button type="primary" @click="handleSubmit(false)"> 查询 </Button>
-<Divider />
-<Alert  type="success" v-if="alert.success.display" @on-close="closealert($event)" show-icon>{{alert.success.message}}</Alert>
-<Alert  type="warning" v-if="alert.warning.display" @on-close="closealert($event)" show-icon>{{alert.warning.message}}</Alert>
-<Alert  type="error" v-if="alert.error.display" @on-close="closealert($event)" show-icon>{{alert.error.message}}</Alert>
-
-
-<Table border :columns="userloancolumns" :data="userloandata"></Table>
-<Divider />
-
-
-<Table border :columns="columns" :data="data"></Table>
+test
 
 </div>
 </template>

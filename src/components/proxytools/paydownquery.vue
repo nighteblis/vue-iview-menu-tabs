@@ -1,20 +1,7 @@
 <template>
 <div>
 
-<Input v-model="payorderno" placeholder="输入用户首付款订单编号pay_order_no" style="width: 300px" />
-
-<Button type="primary" @click="handleSubmit(false)"> 查询首付款订单 </Button>
-
-</br>
-<noticeinformation ref="noticeinformation"></noticeinformation>
-</br>
-
-<Table border :columns="columns2" :data="data2"></Table>
-
-
-<Divider />
-<Table border :columns="columns" :data="data"></Table>
-
+test test test 
 
 </div>
 </template>

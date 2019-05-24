@@ -74,7 +74,7 @@
       </Menu>
 
 
-          <Tabs type="card" closable @on-tab-remove="handleTabRemove">
+          <Tabs type="card" v-model="activeTab" closable @on-tab-remove="handleTabRemove">
           <TabPane  ref="tabPanes" :key="tab.component" :name="tab.component" :label="tab.label" v-if="tab.display" v-for="tab in tabs" >
 
 
@@ -96,14 +96,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'iview/dist/styles/iview.css'
 import iview from 'iview'
-import loanquery from '@/components/proxytools/loanquery.vue'
+import test1 from '@/components/proxytools/loanquery.vue'
 
-import repayquery from '@/components/proxytools/repayquery.vue'
-import paystatusquery from '@/components/paytools/paystatusquery.vue'
-import businessLock from '@/components/proxytools/businessLock.vue'
+import test2 from '@/components/proxytools/repayquery.vue'
+import test5 from '@/components/paytools/paystatusquery.vue'
+import test3 from '@/components/proxytools/businessLock.vue'
 import noticeinformation from '@/components/common/noticeinformation.vue'
-import paydownquery from '@/components/proxytools/paydownquery.vue'
-import accountqueryloanplan from '@/components/accounttools/accountqueryloanplan.vue'
+import test4 from '@/components/proxytools/paydownquery.vue'
+import test6 from '@/components/accounttools/accountqueryloanplan.vue'
 
 
 import coreEnvs from '@/config/coreEnvs.js'
@@ -113,14 +113,13 @@ import VueAxios from 'vue-axios';
 
 Vue.use(VueAxios, axios);
 
-Vue.component(loanquery.name,loanquery)
-Vue.component(repayquery.name,repayquery)
-Vue.component(paystatusquery.name,paystatusquery)
-Vue.component("businessLock",businessLock)
+Vue.component('test1',test1)
+Vue.component('test2',test2)
+Vue.component('test5',test5)
+Vue.component("test3",test3)
 Vue.component("noticeinformation",noticeinformation)
-Vue.component("paydownquery",paydownquery)
-//Vue.component("proxyuserpaystatus",proxyuserpaystatus)
-Vue.component("accountqueryloanplan",accountqueryloanplan)
+Vue.component("test4",test4)
+Vue.component("test6",test6)
 
 Vue.use(boostrapvue)
 Vue.use(iview)
@@ -137,6 +136,8 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       tabs:[
       ],
+      tabsHashTable: {},
+      activeTab:'',
       menutiems: menuitems,
       coreEnvs:coreEnvs,
       selectedEnv: 'env_150',
@@ -146,78 +147,44 @@ export default {
   showinformation(){
 
   },
-   handleTabRemove(name) {
-               // console.log(name)
-                console.log(" helloworldvue "+this.$store.state.selectedEnv )
-                var thiz=this
-                var index
-                this.tabs.forEach(function(element){
-
-                    if(element.component == name)  {
-                    index = thiz.tabs.indexOf(element)
-                    element.display = false
-                    }
-                })
 
 
-              // console.log(index)
-              //this.tabs[name].display = false
-                this.tabs.splice(index, 1)
-              //  console.log(this.tabs )
-            },
-            select(event){
+    handleTabRemove(name) {
+      // set this tab display to be false
+      this.tabs[this.tabsHashTable[name]].display = false;
 
-            console.log(" helloworldvue ")
-            console.log(this.$store.state.selectedEnv)
-            console.log(event)
-            //console.log(this.tabs)
-            var componentexist=false
+      // if displayed tabs size is 0, then show welcome message
+      if (this.tabs.filter(tab => tab.display == true).length == 0)
+        this.welcomedisplay = true;
+    },
 
-            console.log(this.tabs.length)
+    select(event) {
+      console.log("---------select -------------")
+      // not display the welcome window
+      this.welcomedisplay = false
 
-            console.log("===========")
-            console.log(this.$refs['menuitem'+event])
-            console.log('menuitem'+event)
-            var labelname = this.$refs['menuitem'+event][0].$el.innerText
+      if (this.tabsHashTable[event] == undefined) {
+        // 如果此标签页没有打开过
 
-            if(this.tabs.length == 0 )
-            {
-
-
-              this.tabs.push({display:true,component:event,label:labelname})
-              return
-            }
-            else {
-
-              console.log(this.$refs.tabPanes[0].$parent)
-
-
-            }
-
-
-
-            console.log(this.$refs.tabPanes)
-
-            var thiz = this
-            this.$refs.tabPanes.forEach(function(element){
-
-
-                if(element.name == event)  {
-                componentexist = true
-                thiz.$refs.tabPanes[0].$parent.activeKey = event
-
-                //element.display = true
-                return
-                }
-            })
-
-            if(!componentexist)
-            {
-            this.tabs.push({display:true,component:event,label:labelname})
-            this.$refs.tabPanes[0].$parent.activeKey = event
+        let labelname = this.$refs["menuitem" + event][0].$el.innerText
+        // add tab
+        this.tabs.push({ display: true, component: event, label: labelname })
+        //add tab hash table (this used to locate the tab in tab array)
+        this.tabsHashTable[event] = this.tabs.length - 1
+      } else {
+        
+        if(this.tabs[this.tabsHashTable[event]].display  === false)
+        {
+             // 曾经打开过又隐藏[叉掉]的
+            this.tabs[this.tabsHashTable[event]].display = true
           }
+        
 
-            },
+      }
+      // 设置打开的tab为当前显示的tab
+      this.activeTab = event
+      console.log(this)
+    },
 
             open(){
 

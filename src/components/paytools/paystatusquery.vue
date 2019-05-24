@@ -2,69 +2,7 @@
     <div>
     
     
-    
-    
-    
-        <Input v-model="proxyserialno2" placeholder="借款代理串号" style="width: 300px" />
-    
-    
-    
-        <Button type="primary" @click="handleSubmit2"> 查询代付（放款）状态 </Button>
-    
-    
-    
-        <br/>
-    
-        <br/>
-    
-    
-    
-        <Table border :columns="columns2" :data="data2"></Table>
-    
-        <Divider />
-    
-    
-    
-    
-    
-    
-    
-        <Input v-model="proxyserialno1" placeholder="快捷还款代理串号 或者 首付款代理串号" style="width: 300px" />
-    
-    
-    
-        <Button type="primary" @click="handleSubmit1"> 查询快捷支付状态</Button>
-    
-        <br/>
-    
-        <br/>
-    
-        <Table border :columns="columns1" :data="data1"></Table>
-    
-    
-    
-    
-    
-        <Divider />
-    
-    
-    
-    
-    
-        <Input v-model="proxyserialno3" placeholder="划扣还款代理串号" style="width: 300px" />
-    
-    
-    
-        <Button type="primary" @click="handleSubmit3"> 查询划扣（代扣）状态 </Button>
-    
-        <br/>
-    
-        <br/>
-    
-        <Table border :columns="columns3" :data="data3"></Table>
-    
-    
-    
+   how to use ivewui abs 
     
     
     </div>

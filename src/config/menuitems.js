@@ -7,20 +7,20 @@ export default{
 proxy:[
 
 {
-name:'loanquery',
+name:'test1',
 label:'测试工具1'
 },
 
 {
-name:'repayquery',
+name:'test2',
 label:'测试工具2'
 },
 {
-name:'paydownquery',
+name:'test3',
 label:'测试工具3'
 },
 {
-name:'businessLock',
+name:'test4',
 label:'测试工具4'
 }
 
@@ -29,7 +29,7 @@ label:'测试工具4'
 
 pay:[
 {
-name:'paystatusquery',
+name:'test5',
 label:'测试工具5'
 
 }
@@ -39,7 +39,7 @@ label:'测试工具5'
 finance:[],
 account:[
 {
-name:"accountqueryloanplan",
+name:"test6",
 label:"测试工具6"
 
 }

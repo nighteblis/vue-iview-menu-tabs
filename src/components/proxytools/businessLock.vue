@@ -1,35 +1,7 @@
 <template>
 <div>
 
-<Input v-model="userkey" placeholder="输入用户user_key" style="width: 300px" />
-
-<Button type="primary" @click="handleSubmit(false)"> 查询用户业务锁 </Button>
-
-</br>
-<noticeinformation ref="noticeinformation"></noticeinformation>
-</br>
-
-<Table border :columns="columns" :data="data"></Table>
-<Divider />
-
-
-<Collapse v-model="value1">
-        <Panel name="1">
-            业务锁互斥关系
-            <p slot="content" style="white-space: pre-line; text-align:left;">
-账单还款 BILL_REPAY 与  “BILL_REPAY, ORDER_REPAY, ORDER_DERATE, ORDER_IN_BILL, BILL_MERGE”  互斥
-订单还款 ORDER_REPAY 与  “BILL_REPAY, ORDER_REPAY, ORDER_DERATE, ORDER_IN_BILL, BILL_MERGE”  互斥
-借款 LOAN 与  “BILL_REPAY, ORDER_REPAY, LOAN, ORDER_IN_BILL, BILL_MERGE”  互斥
-订单减免 ORDER_DERATE 与  “BILL_REPAY, ORDER_REPAY, ORDER_DERATE, ORDER_IN_BILL, BILL_MERGE”  互斥
-订单合并至账单 ORDER_IN_BILL 与  “BILL_REPAY, ORDER_REPAY, LOAN, ORDER_DERATE, ORDER_IN_BILL, BILL_MERGE”  互斥
-合并账单 BILL_MERGE 与  “BILL_REPAY, ORDER_REPAY, LOAN, ORDER_DERATE, ORDER_IN_BILL, BILL_MERGE”  互斥
-
-
-            </p>
-        </Panel>
-    </Collapse>
-
-
+test test test test
 </div>
 </template>
 <script>

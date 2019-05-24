@@ -1,40 +1,6 @@
 <template>
     <div>
-    
-        <Input v-model="partnerloanno" placeholder="还款的借款编号（账单还款需要输入账单编号， 订单还款输入三方借款编号）" style="width: 450px" />
-    
-        <Select v-if="false" v-model="paytarget" @on-change="selectpaytype" style="width:200px">
-    
-        <Option v-for="item in targettype"  :value="item.value"  :key="item.value">{{ item.label }}</Option>
-    
-    </Select>
-    
-    
-    
-        <Button type="primary" @click="handleSubmit(false)"> 查询 </Button>
-    
-        <Divider />
-    
-        <Alert type="success" v-if="alert.success.display" show-icon>{{alert.success.message}}</Alert>
-    
-        <Alert type="warning" v-if="alert.warning.display" show-icon>{{alert.warning.message}}</Alert>
-    
-        <Alert type="error" v-if="alert.error.display" show-icon>{{alert.error.message}}</Alert>
-    
-    
-    
-        <Table border :columns="userpaycolumns" :data="userpaydata"></Table>
-    
-    
-    
-        <Divider />
-    
-    
-        <Alert>借款编号 【{{partnerloanno}}】  还款编号【{{partnerPayNo}}】 的job执行列表如下</Alert>
-    
-        <Table border :columns="columns" :data="data"></Table>
-    
-    
+   测试 
     
     </div>
 </template>
